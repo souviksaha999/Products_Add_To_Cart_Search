@@ -72,6 +72,8 @@ const addToCartSlice = createSlice({
                 state.cartItems = nextCartItem;
                 toast.error(`${action.payload.name} removed from cart`)
             }
+                        localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+
         },
 
         clearCart : (state,action)=>{
